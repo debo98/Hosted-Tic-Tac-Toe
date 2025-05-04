@@ -1,0 +1,10 @@
+# virtual env
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# editor/temp files
+*.env
+.DS_Store
