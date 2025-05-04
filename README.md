@@ -2,13 +2,17 @@
 
 A minimal, real-time Tic-Tac-Toe game built with **FastAPI** and native **WebSocket** support, paired with a zero-bundler HTML/JS front-end. Designed as a lightweight prototype that can scale by swapping the in-memory game store for Redis pub/sub and running multiple Uvicorn workers.
 
+## Demo
+
+[Live Demo](https://inevitable-lynna-debo98-9c7cc788.koyeb.app/)
+
 ## Features
 
 - **Real-time gameplay** via WebSockets  
 - **Room-based**: support multiple independent games by `game_id`  
 - **Role assignment**: first two connections become **X** and **O**, extras spectate  
 - **In-memory game store** (drop-in Redis pub/sub replacement for production)  
-- **Restart guard**: “Restart” button only appears after a win or draw  
+- **Restart guard**: "Restart" button only appears after a win or draw  
 - **Zero build step**: plain HTML/CSS/JS, no bundler required  
 
 ## Prerequisites
@@ -66,7 +70,7 @@ WebSocket open
 ## Deployment
 
 - **Port**: default `3000`; override via the `$PORT` environment variable when deploying  
-- **Static files**: served from `src/public` by FastAPI’s `StaticFiles`  
+- **Static files**: served from `src/public` by FastAPI's `StaticFiles`  
 - **Scaling**:  
   1. Swap the in-memory `Game` class for a Redis-based pub/sub backend  
   2. Run multiple Uvicorn workers (`--workers N`) behind a load balancer  
